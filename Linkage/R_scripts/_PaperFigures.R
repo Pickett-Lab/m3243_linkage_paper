@@ -207,12 +207,12 @@ diabetes_plot =
 
 hearing_plot =  
   ggplot(linkage_hear, aes(x = bp_cum, y = LOD, colour = as_factor(CHR))) + theme_bw() +
-  geom_hline(yintercept = d_sig, colour = "#cc3311", linewidth = 1, alpha = 0.8) +
-  geom_hline(yintercept = d_sug, colour = "grey48", linetype = "dashed", linewidth = 1, alpha = 0.8) +
+  geom_hline(yintercept = h_sig, colour = "#cc3311", linewidth = 1, alpha = 0.8) +
+  geom_hline(yintercept = h_sug, colour = "grey48", linetype = "dashed", linewidth = 1, alpha = 0.8) +
   geom_line(aes(colour = as.factor(CHR)), linewidth = 1, alpha = 0.6) +
   geom_point(alpha = 0.6, size = 1.5, shape = 16) +
   scale_x_continuous(label = hear_axis_set$CHR, breaks = hear_axis_set$center) +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 3)) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 4)) +
   scale_colour_manual(values = rep(c("#233d4d", "#fe7f2d"), unique(length(hear_axis_set$CHR)))) +
   scale_size_continuous(range = c(0.5,3)) +
   labs(x = NULL, y = "LOD Score", title = "Hearing impairment") +
